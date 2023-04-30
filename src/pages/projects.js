@@ -20,7 +20,11 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
                 className='w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full'>
                 <FramerImage src={img} alt={title} className='w-full h-auto'
                     whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }} />
+                    transition={{ duration: 0.2 }}
+                    priority
+                    sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              50vw" />
             </Link>
             <div className='flex w-1/2 flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6'>
                 <span className='text-xl font-medium text-primary dark:text-primaryDark xs:text-base'>{type}</span>
@@ -29,7 +33,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
                 </Link>
                 <p className=' my-2 rounded-md font-medium text-dark dark:text-light sm:text-sm'>{summary}</p>
                 <div className='mt-2 flex items-center'>
-                    <Link href={github} target='_blank' className='w-10'><GithubIcon /></Link>
+                    <Link name="Github" aria-label='Checkout my github profile' href={github} target='_blank' className='w-10'><GithubIcon /></Link>
                     <Link href={link} target='_blank' className='ml-4 rounded-lg bg-dark p-2 px-6 text-lg font-semibold text-light dark:bg-light dark:text-dark  sm:px-4 sm:text-base '>Visit Project</Link>
                 </div>
             </div>
@@ -59,7 +63,7 @@ const Project = ({ title, type, img, link, github }) => {
                 </Link>
                 <div className='w-full mt-2 flex items-center justify-between'>
                     <Link href={link} target='_blank' className='rounded text-lg font-medium underline md:text-base '>Visit</Link>
-                    <Link href={github} target='_blank' className='w-8 md:w-6'>{""} <GithubIcon />{""}</Link>
+                    <Link name="Github" aria-label='Checkout my github profile' href={github} target='_blank' className='w-8 md:w-6'>{""} <GithubIcon />{""}</Link>
                 </div>
             </div>
         </article>
@@ -73,7 +77,6 @@ const projects = () => {
                 <title>Portfolio | About Page</title>
                 <meta name='description' content='any description' />
             </Head>
-            {/* <TransitionEffect/> */}
             <main className='mb-16  flex w-full flex-col items-center justify-center dark:text-light'>
                 <Layout className='pt-16'>
                     <AnimatedText text="Imagination Trumps Knowledge!" className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl xl:text-6xl' />

@@ -43,6 +43,10 @@ const MovingImg = ({ title, img, link }) => {
                 ref={imgRef}
                 src={img}
                 alt={title}
+                priority
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              50vw"
                 className='z-10 w-96 h-auto hidden absolute rounded-lg md:!hidden' />
         </Link>
     )
@@ -90,7 +94,6 @@ const articles = () => {
                 <title>Portfolio | Articles Page</title>
                 <meta name='description' content='any description' />
             </Head>
-            {/* <TransitionEffect/> */}
             <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light'>
                 <Layout className='pt-16'>
                     <AnimatedText text="Words Can Change The World!" className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl xl:text-6xl' />

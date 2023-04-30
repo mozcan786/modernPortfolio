@@ -3,11 +3,11 @@ import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
-import profilePic from '../../public/images/profile/developer-pic-2.jpg'
 import { useInView, useMotionValue, useSpring } from 'framer-motion'
 import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
 import Education from '@/components/Education'
+import profilePic from '../../public/images/profile/1.png'
 
 const AnimatedNumbers = ({ value }) => {
     const ref = useRef(null)
@@ -36,7 +36,6 @@ const about = () => {
                 <title>Portfolio | About Page</title>
                 <meta name='description' content='any description' />
             </Head>
-            {/* <TransitionEffect/> */}
             <main className='flex w-full flex-col items-center justify-center dark:text-light'>
                 <Layout className='pt-16'>
                     <AnimatedText text="Passion Fuels Purpose! " className='mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8' />
