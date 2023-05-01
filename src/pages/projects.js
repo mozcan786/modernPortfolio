@@ -74,7 +74,7 @@ const projects = () => {
     return (
         <>
             <Head >
-                <title>Portfolio | About Page</title>
+                <title>Portfolio | Project Page</title>
                 <meta name='description' content='any description' />
             </Head>
             <main className='mb-16  flex w-full flex-col items-center justify-center dark:text-light'>
